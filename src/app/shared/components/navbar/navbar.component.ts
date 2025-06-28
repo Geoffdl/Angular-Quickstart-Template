@@ -2,10 +2,11 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-menu.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
-    imports: [CommonModule, ThemeSelectorComponent, HamburgerMenuSvgComponent],
+    imports: [CommonModule, ThemeSelectorComponent, HamburgerMenuSvgComponent, RouterLink],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <div class="du-navbar bg-base-100 shadow-lg">
@@ -26,7 +27,8 @@ import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-men
 
             <div class="du-navbar-center hidden lg:flex">
                 <ul class="du-menu du-menu-horizontal px-1">
-                    <li><a class="hover:text-primary">Home</a></li>
+                    <li><a class="hover:text-primary" routerLink="/home">Home</a></li>
+                    <li><a class="hover:text-primary" routerLink="/map">Map</a></li>
                     <li><a class="hover:text-primary">About</a></li>
                     <li><a class="hover:text-primary">Services</a></li>
                     <li><a class="hover:text-primary">Contact</a></li>
