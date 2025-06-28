@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, computed, signal, effect } from '@angular/core';
-import { IconMoonComponent } from '../../../../../assets/svgs/icon-moon.component';
-import { IconSunComponent } from '../../../../../assets/svgs/icon-sun.component';
+import { IconSunComponent } from '../../../../assets/svgs/icon-sun.component';
+import { IconMoonComponent } from '../../../../assets/svgs/icon-moon.component';
 
 enum Theme {
     LightTheme = 'light',
@@ -9,7 +9,7 @@ enum Theme {
 
 @Component({
     selector: 'app-theme-selector',
-    imports: [IconMoonComponent, IconSunComponent],
+    imports: [IconSunComponent, IconMoonComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <label class="du-swap du-swap-rotate">

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './src/shared/components/navbar/navbar.component';
-import { MainContentComponent } from './src/shared/components/main-content/main-content.component';
-import { FooterComponent } from './src/shared/components/footer/footer.component';
-import { SamplePageWithTodoComponent } from './src/pages/sample-page-with-todo.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { MainContentComponent } from './shared/components/main-content/main-content.component';
+import { SamplePageWithTodoComponent } from './pages/sample-page-with-todo.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, NavbarComponent, MainContentComponent, FooterComponent, SamplePageWithTodoComponent],
+    imports: [RouterOutlet, NavbarComponent, MainContentComponent, SamplePageWithTodoComponent, FooterComponent],
     template: `
         <div class="flex min-h-screen flex-col">
             <!-- Navbar -->

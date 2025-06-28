@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HamburgerMenuSvgComponent } from '../../../../../assets/svgs/hamburger-menu.component';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
+import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-menu.component';
 
 @Component({
     selector: 'app-navbar',
-    imports: [CommonModule, HamburgerMenuSvgComponent, ThemeSelectorComponent],
+    imports: [CommonModule, ThemeSelectorComponent, HamburgerMenuSvgComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <div class="du-navbar bg-base-100 shadow-lg">

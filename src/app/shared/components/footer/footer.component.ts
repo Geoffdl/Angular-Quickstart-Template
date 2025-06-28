@@ -1,8 +1,8 @@
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TwitterSvgComponent } from '../../../../../assets/svgs/twitter.component';
-import { LinkedinSvgComponent } from '../../../../../assets/svgs/linkedin.component';
-import { GithubSvgComponent } from '../../../../../assets/svgs/github.component';
+import { TwitterSvgComponent } from '../../../../assets/svgs/twitter.component';
+import { LinkedinSvgComponent } from '../../../../assets/svgs/linkedin.component';
+import { GithubSvgComponent } from '../../../../assets/svgs/github.component';
 
 @Component({
     selector: 'app-footer',
