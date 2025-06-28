@@ -1,35 +1,21 @@
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
+import angular from "angular-eslint";
 
-export default defineConfig([
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-        plugins: { js },
-        extends: ["js/recommended"],
-    },
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-        languageOptions: { globals: globals.node },
-    },
-    tseslint.configs.recommended,
-]);
-
-// @ts-check
-const eslint = require("@eslint/js");
-const angular = require("angular-eslint");
-
-module.exports = tseslint.config(
+export default tseslint.config(
     {
         files: ["**/*.ts"],
-        extends: [
-            eslint.configs.recommended,
-            ...tseslint.configs.recommended,
-            ...tseslint.configs.stylistic,
-            ...angular.configs.tsRecommended,
-        ],
+        extends: [js.configs.recommended, ...tseslint.configs.recommended, ...angular.configs.tsRecommended],
         processor: angular.processInlineTemplates,
+        languageOptions: {
+            ecmaVersion: 2022,
+            sourceType: "module",
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+            },
+        },
         rules: {
             "@angular-eslint/directive-selector": [
                 "error",
@@ -47,14 +33,13 @@ module.exports = tseslint.config(
                     style: "kebab-case",
                 },
             ],
+            "@typescript-eslint/ban-ts-comment": "off",
+            "@typescript-eslint/no-unused-vars": "warn",
         },
     },
     {
         files: ["**/*.html"],
-        extends: [
-            ...angular.configs.templateRecommended,
-            ...angular.configs.templateAccessibility,
-        ],
+        extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
         rules: {},
     },
 );
