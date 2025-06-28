@@ -121,9 +121,9 @@ export class TodoComponent {
     todosChange = output<Todo[]>();
 
     todos = signal<Todo[]>([
-        { text: 'Learn Angular', completed: false, priority: 'high' },
-        { text: 'Fix ESLint issues', completed: true, priority: 'medium' },
-        { text: 'Write tests', completed: false, priority: 'low' },
+        { text: 'Quickly set up a project', completed: true, priority: 'medium' },
+        { text: 'Build amazing components', completed: false, priority: 'high' },
+        { text: 'Enjoy the ride', completed: false, priority: 'low' },
     ]);
 
     todoCount = computed(() => this.todos().length);

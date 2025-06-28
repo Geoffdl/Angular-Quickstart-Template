@@ -29,7 +29,7 @@ export default tseslint.config(
                 "error",
                 {
                     type: "element",
-                    prefix: "app",
+                    prefix: ["app", "svg"],
                     style: "kebab-case",
                 },
             ],

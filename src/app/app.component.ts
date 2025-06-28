@@ -1,23 +1,29 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TodoComponent } from './src/shared/components/todo/todo.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { MainContentComponent } from './shared/components/main-content/main-content.component';
+import { SamplePageWithTodoComponent } from './pages/sample-page-with-todo.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, TodoComponent],
+    imports: [RouterOutlet, NavbarComponent, MainContentComponent, SamplePageWithTodoComponent, FooterComponent],
     template: `
-        <div class="container mx-auto max-w-7xl p-5">
-            <h1 class="text-primary mb-8 text-center text-4xl font-bold">Angular Todo App with Tailwind & DaisyUI</h1>
+        <div class="flex min-h-screen flex-col">
+            <!-- Navbar -->
+            <app-navbar></app-navbar>
 
-            <div class="du-card bg-base-100 shadow-xl">
-                <div class="du-card-body">
-                    <h2 class="du-card-title text-success justify-center">Modern Angular Todo Component</h2>
-                    <app-todo></app-todo>
-                </div>
-            </div>
+            <!-- Main Content Area-->
+            <app-main-content>
+                <app-sample-page-with-todo />
+            </app-main-content>
+
+            <!-- Footer -->
+            <app-footer></app-footer>
+
+            <!-- Router Outlet -->
+            <router-outlet></router-outlet>
         </div>
-
-        <router-outlet></router-outlet>
     `,
 })
 export class AppComponent {
