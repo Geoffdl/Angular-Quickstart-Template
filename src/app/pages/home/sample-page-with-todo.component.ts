@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TodoComponent } from '../shared/components/todo/todo.component';
-import { MultipleFeaturesContainerComponent } from '../shared/components/multiple-features-container/multiple-features-container.component';
+import { MultipleFeaturesContainerComponent } from '../../shared/components/multiple-features-container/multiple-features-container.component';
+import { TodoComponent } from '../../shared/components/todo/todo.component';
 
 @Component({
     selector: 'app-sample-page-with-todo',
