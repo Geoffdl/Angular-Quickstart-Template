@@ -3,9 +3,7 @@
 
 @plugin "daisyui" {
     prefix: "du-";
-    themes:
-        [ "light",
-        "synthwave"];
+    themes: all;
 }
 
 @layer components {
