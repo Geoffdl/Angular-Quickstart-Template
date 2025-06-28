@@ -1,7 +1,8 @@
-import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, signal, effect } from '@angular/core';
 import { IconMoonComponent } from '../../../../../assets/svgs/icon-moon.component';
 import { IconSunComponent } from '../../../../../assets/svgs/icon-sun.component';
-import { ThemeService } from '../../services/theme.service';
+
+type Theme = 'light' | 'synthwave';
 
 @Component({
     selector: 'app-theme-selector',
@@ -25,11 +26,24 @@ import { ThemeService } from '../../services/theme.service';
     `,
 })
 export class ThemeSelectorComponent {
-    private readonly themeService = inject(ThemeService);
+    private readonly currentTheme = signal<Theme>('light');
 
-    protected readonly isDarkTheme = computed(() => this.themeService.isDarkTheme());
+    protected readonly isDarkTheme = computed(() => this.currentTheme() === 'synthwave');
+
+    constructor() {
+        const saved = localStorage.getItem('theme') as Theme;
+        if (saved === 'light' || saved === 'synthwave') {
+            this.currentTheme.set(saved);
+        }
+        effect(() => {
+            const theme = this.currentTheme();
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    }
 
     protected toggleTheme(): void {
-        this.themeService.toggleTheme();
+        const newTheme: Theme = this.currentTheme() === 'light' ? 'synthwave' : 'light';
+        this.currentTheme.set(newTheme);
     }
 }
