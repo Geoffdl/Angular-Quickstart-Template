@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'svg-linkedin',
-    standalone: true,
     template: `
         <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path

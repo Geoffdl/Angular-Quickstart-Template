@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TwitterSvgComponent } from '../../../../assets/svgs/twitter.component';
-import { LinkedinSvgComponent } from '../../../../assets/svgs/linkedin.component';
-import { GithubSvgComponent } from '../../../../assets/svgs/github.component';
+import { TwitterSvgComponent } from '../../../../../assets/svgs/twitter.component';
+import { LinkedinSvgComponent } from '../../../../../assets/svgs/linkedin.component';
+import { GithubSvgComponent } from '../../../../../assets/svgs/github.component';
 
 @Component({
     selector: 'app-footer',
-    standalone: true,
     imports: [CommonModule, TwitterSvgComponent, LinkedinSvgComponent, GithubSvgComponent],
     template: `
         <footer class="du-footer bg-base-300 text-base-content p-10">
@@ -58,13 +57,12 @@ import { GithubSvgComponent } from '../../../../assets/svgs/github.component';
                 <!-- Copyright -->
                 <div class="du-divider"></div>
                 <div class="text-center">
-                    <p class="text-sm opacity-70">© {{ currentYear }} MyApp. All rights reserved. Built with Angular & DaisyUI.</p>
+                    <p class="text-sm opacity-70">© {{ currentYear() }} MyApp. All rights reserved. Built with Angular & DaisyUI.</p>
                 </div>
             </div>
         </footer>
     `,
-    styles: [],
 })
 export class FooterComponent {
-    currentYear = new Date().getFullYear();
+    protected readonly currentYear = computed(() => new Date().getFullYear());
 }

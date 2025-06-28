@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-main-content',
-    standalone: true,
     imports: [CommonModule],
     template: `
         <main class="bg-base-200 min-h-screen flex-1">
@@ -14,6 +13,5 @@ import { CommonModule } from '@angular/common';
             </div>
         </main>
     `,
-    styles: [],
 })
 export class MainContentComponent {}

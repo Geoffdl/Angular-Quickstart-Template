@@ -4,8 +4,8 @@
 @plugin "daisyui" {
     prefix: "du-";
     themes:
-        light --default,
-        cupcake --prefersdark;
+        [ "light",
+        "synthwave"];
 }
 
 @layer components {

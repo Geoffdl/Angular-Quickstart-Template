@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-menu.component';
+import { HamburgerMenuSvgComponent } from '../../../../../assets/svgs/hamburger-menu.component';
+import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 
 @Component({
     selector: 'app-navbar',
-    standalone: true,
-    imports: [CommonModule, HamburgerMenuSvgComponent],
+    imports: [CommonModule, HamburgerMenuSvgComponent, ThemeSelectorComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <div class="du-navbar bg-base-100 shadow-lg">
             <div class="du-navbar-start">
@@ -33,6 +34,7 @@ import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-men
             </div>
 
             <div class="du-navbar-end">
+                <app-theme-selector class="mr-5" />
                 <div class="du-dropdown du-dropdown-end">
                     <div tabindex="0" role="button" class="du-btn du-btn-ghost du-btn-circle du-avatar">
                         <div class="w-10 rounded-full">
@@ -50,6 +52,5 @@ import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-men
             </div>
         </div>
     `,
-    styles: [],
 })
 export class NavbarComponent {}
