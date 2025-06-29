@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { HamburgerMenuSvgComponent } from '../../../../assets/svgs/hamburger-menu.component';
 import { RouterLink } from '@angular/router';
+import { UserIconComponent } from '../../../../assets/svgs/user-icon.component';
 
 @Component({
     selector: 'app-navbar',
-    imports: [CommonModule, ThemeSelectorComponent, HamburgerMenuSvgComponent, RouterLink],
+    imports: [CommonModule, ThemeSelectorComponent, HamburgerMenuSvgComponent, RouterLink, UserIconComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <div class="du-navbar bg-base-100 shadow-lg">
@@ -42,13 +43,15 @@ import { RouterLink } from '@angular/router';
                     <div tabindex="0" role="button" class="du-btn du-btn-ghost du-btn-circle du-avatar">
                         <div class="w-10 rounded-full">
                             <div class="bg-primary flex h-10 w-10 items-center justify-center rounded-full">
-                                <span class="text-primary-content font-semibold">Hi</span>
+                                <!-- <span class="text-primary-content font-semibold">Hi</span> -->
+                                <svg-user />
                             </div>
                         </div>
                     </div>
                     <ul tabindex="0" class="du-menu du-menu-sm du-dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Profile</a></li>
+                        <li><a routerLink="/profile">Profile</a></li>
                         <li><a>Settings</a></li>
+                        <li><a routerLink="/login">Login</a></li>
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
