@@ -22,6 +22,10 @@ A quick-start Angular template with modern development tools and best practices.
 - **Leaflet 1.9.4** - Interactive maps library
 - **@bluehalo/ngx-leaflet 19.0.0** - Angular Leaflet integration
 
+### Graphical Data Representation
+
+- **@swimlane/ngx-charts 22.0.0** - Angular charts component library
+
 ### Styling & UI
 
 - **Tailwind CSS 4.1.11** - Utility-first CSS framework
