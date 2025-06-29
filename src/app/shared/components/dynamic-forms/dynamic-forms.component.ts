@@ -106,6 +106,7 @@ export class DynamicFormsComponent {
             if (this.isEditMode()) {
                 this.formSubmit.emit(formData);
             } else {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const { id, ...createData } = formData;
                 this.formSubmit.emit(createData);
                 this.form.reset();

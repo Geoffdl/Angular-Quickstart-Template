@@ -58,3 +58,48 @@ export const BOARD_FORM_CONFIG: FormConfig = {
         },
     ],
 };
+
+export const USER_LOGIN_FORM_CONFIG: FormConfig = {
+    title: 'Login',
+    submitLabel: '',
+    fields: [
+        {
+            key: 'email',
+            label: 'Email',
+            placeholder: 'your email',
+            validators: [Validators.required, Validators.email],
+        },
+        {
+            key: 'password',
+            label: 'Password',
+            placeholder: 'your password',
+            validators: [Validators.required, Validators.minLength(7)],
+        },
+    ],
+};
+export const USER_REGISTRATION_FORM_CONFIG: FormConfig = {
+    title: '',
+    fields: [
+        {
+            key: 'Full name',
+            label: 'Full name',
+            placeholder: 'Your full name',
+        },
+        //todo
+        {
+            key: '...//todo',
+            label: '',
+            placeholder: '',
+        },
+        {
+            key: '',
+            label: '',
+            placeholder: '',
+        },
+        {
+            key: '',
+            label: '',
+            placeholder: '',
+        },
+    ],
+};

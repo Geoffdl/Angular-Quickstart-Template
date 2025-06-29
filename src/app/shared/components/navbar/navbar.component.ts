@@ -49,6 +49,7 @@ import { RouterLink } from '@angular/router';
                     <ul tabindex="0" class="du-menu du-menu-sm du-dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li><a>Profile</a></li>
                         <li><a>Settings</a></li>
+                        <li><a routerLink="/login">Login</a></li>
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
