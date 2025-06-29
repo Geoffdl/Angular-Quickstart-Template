@@ -29,6 +29,7 @@ import { RouterLink } from '@angular/router';
                 <ul class="du-menu du-menu-horizontal px-1">
                     <li><a class="hover:text-primary" routerLink="/home">Home</a></li>
                     <li><a class="hover:text-primary" routerLink="/map">Map</a></li>
+                    <li><a class="hover:text-primary" routerLink="/graph">Graphs</a></li>
                     <li><a class="hover:text-primary">About</a></li>
                     <li><a class="hover:text-primary">Services</a></li>
                     <li><a class="hover:text-primary">Contact</a></li>
