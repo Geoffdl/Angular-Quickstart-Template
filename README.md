@@ -25,3 +25,17 @@ A quick-start Angular template with modern development tools and best practices.
 - **prettier-plugin-tailwindcss 0.6.9** - Tailwind class sorting
 - **ESLint 9.21.0** - Code linting
 - **Cypress 13.17.0** - End-to-end testing
+
+
+### Usage
+
+```
+Clone the project:
+$ git clone https://github.com/Geoffdl/Angular-Quickstart-Template.git
+
+Install the dependencies: 
+npm i
+
+View de demo:
+ng serve
+```
