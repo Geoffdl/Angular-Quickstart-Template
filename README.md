@@ -36,6 +36,12 @@ $ git clone https://github.com/Geoffdl/Angular-Quickstart-Template.git
 Install the dependencies: 
 npm i
 
-View de demo:
+View the demo:
 ng serve
+
+To start another project from it, rename your new project name in :
+index.html
+package.json
+angular.json
+    
 ```
